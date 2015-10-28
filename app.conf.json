@@ -1,0 +1,14 @@
+{
+  "development": {
+    "ServerUrl": "http://localhost:9000",
+    "IsDebug":true
+  },
+  "production": {
+    "ServerUrl": "http://api.jackhu.top",
+    "IsDebug":false
+  },
+  "test": {
+    "ServerUrl": "http://localhost:8080",
+    "IsDebug":false
+  }
+}
