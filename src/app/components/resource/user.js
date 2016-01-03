@@ -3,7 +3,7 @@
 
 	angular.module('jackblog.resources')
 		.factory('User', function($resource,ServerUrl){
-			var userResource = $resource(ServerUrl + '/api/users/:id/:controller', {
+			var userResource = $resource(ServerUrl + '/users/:id/:controller', {
 					id: '@_id'
 				},
 				{

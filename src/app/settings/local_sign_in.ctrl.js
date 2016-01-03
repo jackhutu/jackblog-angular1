@@ -8,7 +8,7 @@
       };
       //获取验证码
       function getCaptcha() {
-        $scope.captchaUrl = ServerUrl + '/api/users/getCaptcha?' + Math.random();
+        $scope.captchaUrl = ServerUrl + '/users/getCaptcha?' + Math.random();
       }
       getCaptcha();
       $scope.changeCaptcha = function () {

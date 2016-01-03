@@ -3,7 +3,7 @@
 
   angular.module('jackblog.resources')
     .factory('Blog', function($resource,ServerUrl){
-      var blogResource = $resource(ServerUrl + '/api/blog/:id/:controller', {
+      var blogResource = $resource(ServerUrl + '/article/:id/:controller', {
           id: '@_id'
         },
         {
@@ -11,13 +11,13 @@
           getFrontBlogList:{
             method:'GET',
             params:{
-              id:'getFrontBlogList'
+              id:'getFrontArticleList'
             }
           },
           getFrontBlogCount:{
             method:'GET',
             params:{
-              id:'getFrontBlogCount'
+              id:'getFrontArticleCount'
             }
           },
           getFrontArticle:{

@@ -24,22 +24,22 @@ describe('module jackblog.article',function () {
 	    //$templateCache.put('app/article/article.html', '<div>article content</div>'); 
 	    localStorage.removeItem('options');
 
-	    mockArticle = $httpBackend.when('GET','/api/blog/55b1b134f803378e1b893e04/getFrontArticle')
+	    mockArticle = $httpBackend.when('GET','/article/55b1b134f803378e1b893e04/getFrontArticle')
 	    													.respond({data: {title:'文章标题',content:'文章内容'}});
-	    mockGetPrenext = $httpBackend.when('GET','/api/blog/55b1b134f803378e1b893e04/getPrenext?sortName=publish_time&tagId=')
+	    mockGetPrenext = $httpBackend.when('GET','/article/55b1b134f803378e1b893e04/getPrenext?sortName=publish_time&tagId=')
 	    													.respond({data:{prev:{
 	    														title:'上一篇文章'
 	    													},next:{
 	    														title:'下一篇文章'
 	    													}}});
 
-	    mockCommentList = $httpBackend.when('GET','/api/comment/55b1b134f803378e1b893e04/getFrontCommentList')
+	    mockCommentList = $httpBackend.when('GET','/comment/55b1b134f803378e1b893e04/getFrontCommentList')
 	    													.respond({data:[{
 	    														content:'评论1'
 	    													},{
 	    														content:'评论2'
 	    													}]});
-	    mockUser = $httpBackend.when('GET','/api/users/me')
+	    mockUser = $httpBackend.when('GET','/users/me')
 	    											.respond({_id:'55bf0cc80f5d43056b80a01d',nickname:'jack',role:'admin',email:'test@test.com'});
 	}));
 
@@ -75,7 +75,7 @@ describe('module jackblog.article',function () {
 		});
 
 		it('should submitNewComment return success',function () {
-			$httpBackend.expectPOST('/api/comment/addNewComment')
+			$httpBackend.expectPOST('/comment/addNewComment')
 									.respond({success:true,data:{content:'新评论.'}});
 
 			$scope.submitNewComment('55b481acea53ce8b2a6dadc5');
@@ -86,7 +86,7 @@ describe('module jackblog.article',function () {
 
 		it('should submitNewComment return error',function () {
 			spyOn(toaster, 'pop');
-			$httpBackend.expectPOST('/api/comment/addNewComment')
+			$httpBackend.expectPOST('/comment/addNewComment')
 									.respond(403,'');
 
 			$scope.submitNewComment('55b481acea53ce8b2a6dadc5');
@@ -94,7 +94,7 @@ describe('module jackblog.article',function () {
 			expect(toaster.pop).toHaveBeenCalled();
 		});
 		it('should toggleLike return success',function () {
-			$httpBackend.expectPUT('/api/blog/55b481acea53ce8b2a6dadc5/toggleLike')
+			$httpBackend.expectPUT('/article/55b481acea53ce8b2a6dadc5/toggleLike')
 									.respond({success:true,count:22,isLike:true});
 			$scope.toggleLike('55b481acea53ce8b2a6dadc5');
 			$httpBackend.flush();
@@ -161,7 +161,7 @@ describe('module jackblog.article',function () {
 		});
 
 		it('should submitNewReply return new replys',function () {
-			$httpBackend.expectPOST('/api/comment/55bf7fb490ee32e5792713e4/addNewReply').respond({
+			$httpBackend.expectPOST('/comment/55bf7fb490ee32e5792713e4/addNewReply').respond({
 				success:true,data:[{content:'回复内容'}]
 			})
 			$scope.commentList = [{
@@ -175,7 +175,7 @@ describe('module jackblog.article',function () {
 		});
 
 		it('should submitNewReply return error_msg',function() {
-			$httpBackend.expectPOST('/api/comment/55bf7fb490ee32e5792713e4/addNewReply').respond(403,'');
+			$httpBackend.expectPOST('/comment/55bf7fb490ee32e5792713e4/addNewReply').respond(403,'');
 
 			spyOn(toaster,'pop');
 			
@@ -186,7 +186,7 @@ describe('module jackblog.article',function () {
 
 
 		it('should delComment return success',function () {
-			$httpBackend.expectDELETE('/api/comment/55bf7fb490ee32e5792713e4').respond({
+			$httpBackend.expectDELETE('/comment/55bf7fb490ee32e5792713e4').respond({
 				success:true
 			});
 			$scope.commentList = [{
@@ -203,7 +203,7 @@ describe('module jackblog.article',function () {
 		});
 
 		it('should delComment return error_msg',function() {
-			$httpBackend.expectDELETE('/api/comment/55bf7fb490ee32e5792713e4').respond(403,'');
+			$httpBackend.expectDELETE('/comment/55bf7fb490ee32e5792713e4').respond(403,'');
 			spyOn($window, 'confirm').and.callFake(function () {
 			     return true;
 			});
@@ -234,7 +234,7 @@ describe('module jackblog.article',function () {
 		}
 
 		it('should delReply return success',function () {
-			$httpBackend.expectPUT('/api/comment/55bf7fb490ee32e5792713e4/delReply').respond({
+			$httpBackend.expectPUT('/comment/55bf7fb490ee32e5792713e4/delReply').respond({
 				success:true,data:{content:'1评论'}
 			});
 			spyOn($window, 'confirm').and.callFake(function () {
@@ -252,7 +252,7 @@ describe('module jackblog.article',function () {
 		});
 
 		it('should delReply return error_msg',function() {
-			$httpBackend.expectPUT('/api/comment/55bf7fb490ee32e5792713e4/delReply').respond(403,'');
+			$httpBackend.expectPUT('/comment/55bf7fb490ee32e5792713e4/delReply').respond(403,'');
 			spyOn($window, 'confirm').and.callFake(function () {
 			     return true;
 			});

@@ -3,7 +3,7 @@
 
   angular.module('jackblog.resources')
     .factory('Comment', function($resource,ServerUrl){
-      var commentResource = $resource(ServerUrl + '/api/comment/:id/:controller', {
+      var commentResource = $resource(ServerUrl + '/comment/:id/:controller', {
           id: '@_id'
         },
         {

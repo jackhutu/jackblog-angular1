@@ -3,7 +3,7 @@
 
 	angular.module('jackblog.resources')
 		.factory('Tags', function($resource,ServerUrl){
-			var tagsResource = $resource(ServerUrl + '/api/tags/:id/:controller', {
+			var tagsResource = $resource(ServerUrl + '/tags/:id/:controller', {
 					id: '@_id'
 				},
 				{

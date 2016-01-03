@@ -55,7 +55,7 @@ describe('module jackblog.settings',function () {
 			    		$scope: $scope
 			    	});
 
-			    mockUser = $httpBackend.when('GET','/api/users/me')
+			    mockUser = $httpBackend.when('GET','/users/me')
 			    											.respond({_id:'55bf0cc80f5d43056b80a01d',nickname:'jack',role:'admin',email:'test@test.com'});
 			    
 			}));
@@ -66,7 +66,7 @@ describe('module jackblog.settings',function () {
 			});
 			it('should mdUser return success',function () {
 				$httpBackend.flush();
-				$httpBackend.expectPUT('/api/users/mdUser')
+				$httpBackend.expectPUT('/users/mdUser')
 									.respond({success:true,data:{_id:'55bf0cc80f5d43056b80a01d',nickname:'jack hu'}});
 				var form = {
 					$valid:true

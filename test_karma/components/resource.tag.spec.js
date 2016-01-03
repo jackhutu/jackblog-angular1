@@ -12,7 +12,7 @@ describe('resource tags', function() {
     beforeEach(inject(function ($injector) {
         $httpBackend = $injector.get('$httpBackend');
         mockTagsResource = $injector.get('Tags');
-        mockResponse = $httpBackend.when('GET', '/api/tags/getFrontTagList');
+        mockResponse = $httpBackend.when('GET', '/tags/getFrontTagList');
     }));
 
     it('should call getFrontTagList return success',function (done) {

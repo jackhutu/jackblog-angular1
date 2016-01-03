@@ -25,12 +25,10 @@
 					//提交回复
 					$scope.submitNewReply = function (cid,content,index) {
 					  Comment.addNewReply(cid,{content:content}).then(function (result) {
-					  	$log.debug(result);
 					  	$scope.commentList[index].replys = result.data;
 					  	$scope.isReply = !$scope.isReply;
 					  }).catch(function (err) {
 					  	err = err.data.error_msg || '添加回复失败.';
-					  	$log.debug(err);
 					  	toaster.pop('error','',err);
 					  });
 					};

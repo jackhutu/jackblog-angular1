@@ -15,7 +15,7 @@ describe('resource blog', function() {
   describe('User getCaptcha',function () {
     var mockResponse;
     beforeEach(inject(function ($injector) {
-      mockResponse = $httpBackend.when('GET', '/api/users/getCaptcha');
+      mockResponse = $httpBackend.when('GET', '/users/getCaptcha');
     }));
 
     it('should call getCaptcha return data',function (done) {
@@ -42,7 +42,7 @@ describe('resource blog', function() {
 	describe('User mdUser',function () {
 	  var mockResponse;
 	  beforeEach(inject(function ($injector) {
-	    mockResponse = $httpBackend.when('PUT', '/api/users/mdUser');
+	    mockResponse = $httpBackend.when('PUT', '/users/mdUser');
 	  }));
 
 	  it('should call mdUser return success',function (done) {
@@ -70,7 +70,7 @@ describe('resource blog', function() {
 	describe('User getUserProvider',function () {
 	  var mockResponse;
 	  beforeEach(inject(function ($injector) {
-	    mockResponse = $httpBackend.when('GET', '/api/users/getUserProvider');
+	    mockResponse = $httpBackend.when('GET', '/users/getUserProvider');
 	  }));
 
 	  it('should call getUserProvider return success',function (done) {
@@ -97,7 +97,7 @@ describe('resource blog', function() {
 	describe('User get',function () {
 	  var mockResponse;
 	  beforeEach(inject(function ($injector) {
-	    mockResponse = $httpBackend.when('GET', '/api/users/me');
+	    mockResponse = $httpBackend.when('GET', '/users/me');
 	  }));
 
 	  it('should call get return me',function (done) {

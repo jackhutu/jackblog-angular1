@@ -16,7 +16,7 @@ describe('resource blog', function() {
   describe('Blog getFrontBlogList', function () {
     var mockResponse;
     beforeEach(inject(function ($injector) {
-        mockResponse = $httpBackend.when('GET', '/api/blog/getFrontBlogList');
+        mockResponse = $httpBackend.when('GET', '/article/getFrontBlogList');
     }));
 
     it('should call getFrontBlogList return data', function (done) {
@@ -49,7 +49,7 @@ describe('resource blog', function() {
   describe('blog getFrontBlogCount',function () {
     var mockResponse;
     beforeEach(inject(function ($injector) {
-        mockResponse = $httpBackend.when('GET', '/api/blog/getFrontBlogCount');
+        mockResponse = $httpBackend.when('GET', '/article/getFrontBlogCount');
     }));
 
     it('should call getFrontBlogCount return count',function (done) {
@@ -76,7 +76,7 @@ describe('resource blog', function() {
   describe('Blog getFrontArticle',function () {
     var mockResponse;
     beforeEach(inject(function ($injector) {
-        mockResponse = $httpBackend.when('GET', '/api/blog/55b0c23aa463e6742c3030ea/getFrontArticle');
+        mockResponse = $httpBackend.when('GET', '/article/55b0c23aa463e6742c3030ea/getFrontArticle');
     }));
 
     it('should call getFrontArticle return article',function (done) {
@@ -103,7 +103,7 @@ describe('resource blog', function() {
   describe('Blog getIndexImage',function () {
     var mockResponse;
     beforeEach(inject(function ($injector) {
-        mockResponse = $httpBackend.when('GET', '/api/blog/getIndexImage');
+        mockResponse = $httpBackend.when('GET', '/article/getIndexImage');
     }));
 
     it('should call getIndexImage return img',function (done) {
@@ -131,7 +131,7 @@ describe('resource blog', function() {
   describe('Blog toggleLike',function () {
     var mockResponse;
     beforeEach(inject(function ($injector) {
-        mockResponse = $httpBackend.when('PUT', '/api/blog/55b0c23aa463e6742c3030ea/toggleLike');
+        mockResponse = $httpBackend.when('PUT', '/article/55b0c23aa463e6742c3030ea/toggleLike');
     }));
 
     it('should call toggleLike return isLike',function (done) {
@@ -160,7 +160,7 @@ describe('resource blog', function() {
   describe('Blog getPrenext',function () {
     var mockResponse;
     beforeEach(inject(function ($injector) {
-        mockResponse = $httpBackend.when('GET', '/api/blog/55b0c23aa463e6742c3030ea/getPrenext');
+        mockResponse = $httpBackend.when('GET', '/article/55b0c23aa463e6742c3030ea/getPrenext');
     }));
 
     it('should call getPrenext return data',function (done) {
