@@ -15,3 +15,14 @@ dist
 test_coverage
 process.json
 private
+
+
+##push server
+#/*
+#!/dist
+#!server.js
+#!/logs
+#!package.json
+#!process.json
+#*.log
+#*.pid

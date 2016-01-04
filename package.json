@@ -5,9 +5,12 @@
   "repository": "https://github.com/jackhutu/jackblog-angular-1.x",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^3.10.1"
+    "express": "^4.13.3",
+    "pm2": "^0.15.10",
+    "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
+    "lodash": "^3.10.1",
     "browser-sync": "^2.9.4",
     "browser-sync-spa": "^1.0.3",
     "del": "^2.0.2",
@@ -60,7 +63,9 @@
   "scripts": {
     "start": "gulp serve",
     "test": "gulp test:karma",
-    "test-e2e": "gulp test:e2e"
+    "test-e2e": "gulp test:e2e",
+    "pm2-start": "pm2 start process.json",
+    "pm2-restart": "pm2 restart process.json"
   },
   "engines": {
     "node": ">=0.10.0"
