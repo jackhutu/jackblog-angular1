@@ -18,9 +18,9 @@ describe('jackblog',function () {
 	    						.respond({success:true,img:'http://upload.jackhu.top/blog/index/8x7hVJvpE3Z6ruwgtd2G.jpg'});
 	    mockTagsList = $httpBackend.when('GET', '/tags/getFrontTagList')
 	    													.respond({data: [{name:'nodejs'}]});
-	    mockBlogCount = $httpBackend.when('GET','/article/getFrontBlogCount?currentPage=1&itemsPerPage=10&sortName=publish_time&tagId=')
+	    mockBlogCount = $httpBackend.when('GET','/article/getFrontArticleCount?currentPage=1&itemsPerPage=10&sortName=publish_time&tagId=')
 	    													.respond({success:true,count:2});
-	    mockBlogList = $httpBackend.when('GET','/article/getFrontBlogList?currentPage=1&itemsPerPage=10&sortName=publish_time&tagId=')
+	    mockBlogList = $httpBackend.when('GET','/article/getFrontArticleList?currentPage=1&itemsPerPage=10&sortName=publish_time&tagId=')
 	    													.respond({data:[{
 	    														title:'文章1'
 	    													},{
@@ -107,7 +107,7 @@ describe('jackblog',function () {
 		});
 
 		it('should get tag and blog list return error', function() {
-			$httpBackend.expectGET('/article/getFrontBlogList?currentPage=1&itemsPerPage=10&sortName=publish_time&tagId=')
+			$httpBackend.expectGET('/article/getFrontArticleList?currentPage=1&itemsPerPage=10&sortName=publish_time&tagId=')
 				    			.respond(403,'');
 
 		  expect($scope.blogList.length).toEqual(0);
@@ -120,9 +120,9 @@ describe('jackblog',function () {
 		});
 
 		it('should loadMore return new blog list', function() {
-			$httpBackend.expectGET('/article/getFrontBlogCount?currentPage=2&itemsPerPage=10&sortName=publish_time&tagId=')
+			$httpBackend.expectGET('/article/getFrontArticleCount?currentPage=2&itemsPerPage=10&sortName=publish_time&tagId=')
 				    													.respond({success:true,count:2});
-			$httpBackend.expectGET('/article/getFrontBlogList?currentPage=2&itemsPerPage=10&sortName=publish_time&tagId=')
+			$httpBackend.expectGET('/article/getFrontArticleList?currentPage=2&itemsPerPage=10&sortName=publish_time&tagId=')
 				    													.respond({data:[{
 				    														title:'文章11'
 				    													},{
@@ -139,9 +139,9 @@ describe('jackblog',function () {
 		});
 
 		it('should changeSort return new blog list', function() {
-			$httpBackend.expectGET('/article/getFrontBlogCount?currentPage=1&itemsPerPage=10&sortName=visit_count&tagId=')
+			$httpBackend.expectGET('/article/getFrontArticleCount?currentPage=1&itemsPerPage=10&sortName=visit_count&tagId=')
 				    			.respond({success:true,count:2});
-			$httpBackend.expectGET('/article/getFrontBlogList?currentPage=1&itemsPerPage=10&sortName=visit_count&tagId=')
+			$httpBackend.expectGET('/article/getFrontArticleList?currentPage=1&itemsPerPage=10&sortName=visit_count&tagId=')
 				    			.respond({data:[{title:'文章2'},{title:'文章1',}]});
 
 			$scope.changeSort('visit_count');
@@ -155,9 +155,9 @@ describe('jackblog',function () {
 
 		it('should changeTag return new blog list', function() {
 
-			$httpBackend.expectGET('/article/getFrontBlogCount?currentPage=1&itemsPerPage=10&sortName=&tagId=55b0c23aa463e6742c3030ea')
+			$httpBackend.expectGET('/article/getFrontArticleCount?currentPage=1&itemsPerPage=10&sortName=&tagId=55b0c23aa463e6742c3030ea')
 									.respond({success:true,count:2});
-			$httpBackend.expectGET('/article/getFrontBlogList?currentPage=1&itemsPerPage=10&sortName=&tagId=55b0c23aa463e6742c3030ea')
+			$httpBackend.expectGET('/article/getFrontArticleList?currentPage=1&itemsPerPage=10&sortName=&tagId=55b0c23aa463e6742c3030ea')
 									.respond({data:[{title:'文章4'},{title:'文章5',}]});
 
 

@@ -16,7 +16,7 @@ describe('resource blog', function() {
   describe('Blog getFrontBlogList', function () {
     var mockResponse;
     beforeEach(inject(function ($injector) {
-        mockResponse = $httpBackend.when('GET', '/article/getFrontBlogList');
+        mockResponse = $httpBackend.when('GET', '/article/getFrontArticleList');
     }));
 
     it('should call getFrontBlogList return data', function (done) {
@@ -49,7 +49,7 @@ describe('resource blog', function() {
   describe('blog getFrontBlogCount',function () {
     var mockResponse;
     beforeEach(inject(function ($injector) {
-        mockResponse = $httpBackend.when('GET', '/article/getFrontBlogCount');
+        mockResponse = $httpBackend.when('GET', '/article/getFrontArticleCount');
     }));
 
     it('should call getFrontBlogCount return count',function (done) {
