@@ -23,7 +23,7 @@
       <ul class="article-list list-unstyled clearfix">
         <li class="article-item" ng-class="{'have-img':blog.images.length>0}" ng-repeat="blog in blogList">
             <a ng-show="(blog.images.length > 0)" class="wrap-img" ui-sref="article({aid:blog._id})">
-              <img ng-src="{{blog.images[0].url}}?imageView2/2/w/100/h/100">
+              <img ng-src="{{blog.images[0].url}}-100x100">
             </a>
             <div>
               <p class="list-top">               
