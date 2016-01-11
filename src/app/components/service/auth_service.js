@@ -43,6 +43,7 @@
         },
 
         logout: function() {
+          $cookies.put('token','',{domain:$window.location.hostname});
           $cookies.remove('token');
           currentUser = {};
         },
