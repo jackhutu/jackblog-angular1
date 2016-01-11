@@ -1,15 +1,20 @@
 <div class="navbar-box navbar-skin" ng-controller="NavbarCtrl">
   <div class="navbar-menu">
-      <a class="navbar-item active logo" title="首页" href="/">
+      <a class="navbar-item logo" ng-class="{active: isActive('/')}" title="首页" href="/">
         Hu
-      </a>      
-      <!--    
-      <a class="mobile hidden-xs" tooltip-class="nav-tooltip" tooltip-placement="right" tooltip="移动应用" href="/apps">
-      <i class="fa fa-mobile"></i>
-      </a>  --> 
+      </a>
+      <a class="navbar-item mobile hidden-xs" ng-class="{active: isActive('/apps')}" tooltip-class="nav-tooltip" tooltip-placement="right" tooltip="移动应用" href="/apps">
+        <i class="fa fa-mobile"></i>
+      </a>  
   </div>
   <div class="navbar-expanded">
       <div>
+        <a class="navbar-item expanded-version" href="http://redux.jackhu.top" title="React">
+          <img src='http://upload.jackhu.top/icons/react.png-32x32' /> 
+        </a>
+        <a class="navbar-item expanded-version" href="http://angular1.jackhu.top" title="Angular1.x">
+          <img src='http://upload.jackhu.top/icons/AngularJS.png-32x32' /> 
+        </a>
         <a class="navbar-item change-mode" href="javascript:;" ng-click="changeMode()" tooltip-placement="right" tooltip-class="nav-tooltip" tooltip="模式切换">
           <i ng-if="dayMode" class="fa fa-moon-o"></i>
           <i ng-if="!dayMode" class="fa fa-sun-o"></i>

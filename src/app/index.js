@@ -17,7 +17,8 @@
 			'jackblog.filter',
 			'jackblog.directives',
 			'jackblog.article',
-			'jackblog.settings'
+			'jackblog.settings',
+			'jackblog.mobile'
 		])
 	.config(function ($logProvider,$stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, IsDebug) {
 	  $locationProvider.html5Mode(true);

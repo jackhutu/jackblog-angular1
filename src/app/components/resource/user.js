@@ -30,6 +30,12 @@
 						params:{
 							id:'getUserProvider'
 						}
+					},
+					snsLogins:{
+						method:'GET',
+						params:{
+							id:'snsLogins'
+						}
 					}
 				});
 
@@ -54,6 +60,14 @@
 			  getUserProvider:function (callback) {
 			    var cb = callback || angular.noop;
 			    return userResource.getUserProvider(function(result) {
+			      return cb(result);
+			    }, function(err) {
+			      return cb(err);
+			    }).$promise;
+			  },
+			  getLogins:function (callback) {
+			    var cb = callback || angular.noop;
+			    return userResource.snsLogins(function(result) {
 			      return cb(result);
 			    }, function(err) {
 			      return cb(err);
