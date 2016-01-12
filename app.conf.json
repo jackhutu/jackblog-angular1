@@ -1,14 +1,23 @@
 {
   "development": {
     "ServerUrl": "http://localhost:9000",
-    "IsDebug":true
+    "IsDebug":true,
+    "CookieConfig":{
+      "domain":""
+    }
   },
   "production": {
     "ServerUrl": "http://api.jackhu.top",
-    "IsDebug":false
+    "IsDebug":false,
+    "CookieConfig":{
+      "domain":".jackhu.top"
+    }
   },
   "test": {
     "ServerUrl": "http://localhost:8080",
-    "IsDebug":false
+    "IsDebug":false,
+    "CookieConfig":{
+      "domain":""
+    }
   }
 }

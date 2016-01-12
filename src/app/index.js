@@ -23,12 +23,13 @@
 	.config(function ($logProvider,$stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, IsDebug) {
 	  $locationProvider.html5Mode(true);
 	  $httpProvider.defaults.timeout = 500000;
+	  $httpProvider.defaults.withCredentials = true;
 	  $httpProvider.interceptors.push('AuthInterceptor');
 	  // Enable log
 	  $logProvider.debugEnabled(IsDebug);
 	  $urlRouterProvider.otherwise('/');
 	})
-	  .run(function ($rootScope, ngProgressFactory, $state, lodash, Auth, Blog, $cookies, CustomModalService, toaster) {
+	  .run(function ($rootScope, ngProgressFactory, $state, lodash, Auth, Blog, $cookies, CustomModalService, toaster,CookieConfig) {
 			//默认头像
 			$rootScope.default_avatar = '/assets/images/avatar.png';
 			//首页图片
@@ -87,7 +88,7 @@
 			  if(snsmsg){
 			  	snsmsg = JSON.parse(snsmsg);
 			  	toaster.pop(snsmsg.msgtype,'',snsmsg.msg);
-			  	$cookies.remove('snsmsg');
+			  	$cookies.remove('snsmsg',CookieConfig);
 			  }
 
 			});

@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('jackblog.settings')
-    .controller('LocalSignInCtrl', function ($rootScope,$scope,Auth,$state,$log,toaster,$cookies,ServerUrl) {
+    .controller('LocalSignInCtrl', function ($rootScope,$scope,Auth,$state,$log,toaster,$cookies,ServerUrl,CookieConfig) {
       $scope.loginOauth = function (provider) {
         Auth.snsLogin(provider,$rootScope.previousUrl);
       };
@@ -31,7 +31,7 @@
             getCaptcha();
             err = err.error_msg || err.data.error_msg || "登录失败,请重试";
             toaster.pop('error','',err);
-            $cookies.remove('token');
+            $cookies.remove('token',CookieConfig);
             //$state.go('signin',{},{reload:true});
           });
       }

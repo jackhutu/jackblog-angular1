@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('jackblog.service')
-    .factory('Auth', function Auth($location, $rootScope, $http, User, $cookies, $q,lodash, $window,ServerUrl) {
+    .factory('Auth', function Auth($location, $rootScope, $http, User, $cookies, $q,lodash, $window,ServerUrl,CookieConfig) {
       var currentUser = {};
       if($cookies.get('token')) {
         currentUser = User.get();
@@ -19,7 +19,7 @@
             captcha:user.captcha
           }).
           success(function(data) {
-            $cookies.put('token', data.token);
+            $cookies.put('token', data.token,CookieConfig);
             currentUser = User.get();
             deferred.resolve(data);
             return cb();
@@ -43,8 +43,7 @@
         },
 
         logout: function() {
-          $cookies.put('token','',{domain:$window.location.hostname});
-          $cookies.remove('token');
+          $cookies.remove('token',CookieConfig);
           currentUser = {};
         },
 
