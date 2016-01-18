@@ -7,7 +7,7 @@
       if($cookies.get('token')) {
         currentUser = User.get();
       }
-
+      
       return {
         login: function(user, callback) {
           var cb = callback || angular.noop;
