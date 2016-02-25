@@ -62,7 +62,11 @@
         </ul>
 
     </div>
-    
+    <div ng-if="!isLoggedIn()" class="pull-right">
+      <a class="shrink-login" ui-sref="signin()">
+          <i class="fa fa-sign-in"></i> 登录
+      </a>
+    </div>
     <div class="pull-right">
       <a class="navbar-item change-mode" href="javascript:;" ng-click="changeMode()">
         <i ng-if="dayMode" class="fa fa-moon-o"></i>
@@ -85,11 +89,5 @@
       </a>
     </div>
 
-    <div ng-if="!isLoggedIn()" class="pull-right">
-      <a class="shrink-login" ui-sref="signin()">
-          <i class="fa fa-sign-in"></i> 登录
-      </a>
-    </div>
-  
   </div>
 </div>
