@@ -401,4 +401,20 @@ input.ng-valid.ng-dirty {
     background:rgba(0,0,0,0.8);
   }
 }
-
+//browser outdated
+.browsehappy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding: 13px 0 12px;
+  text-align: center;
+  background-color: $tagActiveBgColor;
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 1100;
+  a{
+    color: yellow;
+  }
+}

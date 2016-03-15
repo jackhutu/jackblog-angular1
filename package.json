@@ -1,21 +1,39 @@
 {
   "name": "jackblog-angular1",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "description": "jackblog angular1.x版",
-  "repository": "https://github.com/jackhutu/jackblog-angular-1.x",
+  "scripts": {
+    "start": "gulp serve",
+    "test": "gulp test:karma",
+    "test-e2e": "gulp test:e2e",
+    "pm2-start": "pm2 start process.json",
+    "pm2-restart": "pm2 restart process.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackhutu/jackblog-angular1.git"
+  },
+  "keywords": [
+    "vue",
+    "jackblog"
+  ],
+  "author": "Jack Hu",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackhutu/jackblog-angular1/issues"
+  },
+  "homepage": "https://github.com/jackhutu/jackblog-angular1#readme",
   "dependencies": {
-    "express": "^4.13.3",
-    "pm2": "^0.15.10",
+    "express": "^4.13.4",
+    "pm2": "^1.0.2",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
-    "lodash": "^3.10.1",
     "browser-sync": "^2.9.4",
     "browser-sync-spa": "^1.0.3",
     "del": "^2.0.2",
     "event-stream": "^3.3.1",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-angular-filesort": "^1.1.1",
     "gulp-angular-templatecache": "^1.7.0",
     "gulp-autoprefixer": "^3.0.1",
@@ -54,20 +72,11 @@
     "karma-jasmine": "^0.3.6",
     "karma-ng-html2js-preprocessor": "^0.1.2",
     "karma-phantomjs-launcher": "^0.2.1",
+    "lodash": "^3.10.1",
     "main-bower-files": "^2.9.0",
     "phantomjs": "^1.9.18",
     "protractor": "^2.4.0",
     "uglify-save-license": "^0.4.1",
     "wiredep": "^2.2.2"
-  },
-  "scripts": {
-    "start": "gulp serve",
-    "test": "gulp test:karma",
-    "test-e2e": "gulp test:e2e",
-    "pm2-start": "pm2 start process.json",
-    "pm2-restart": "pm2 restart process.json"
-  },
-  "engines": {
-    "node": ">=0.10.0"
   }
 }
