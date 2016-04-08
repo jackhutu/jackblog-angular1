@@ -97,6 +97,7 @@
 		a.navbar-item{
 			float: left;
 			width: $navbarSize;
+			height: $navbarSize;
 			&:hover{
 		    background-color: $navHoverBgColor;
 		    color:white;
@@ -109,7 +110,6 @@
 		}
 		.logo{
 			font-size: 18px;
-			color: white;
 		}
 		.mobile{
 			padding:5px;

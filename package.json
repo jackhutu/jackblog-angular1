@@ -1,6 +1,6 @@
 {
   "name": "jackblog-angular1",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "jackblog angular1.x版",
   "scripts": {
     "start": "gulp serve",
@@ -25,13 +25,13 @@
   "homepage": "https://github.com/jackhutu/jackblog-angular1#readme",
   "dependencies": {
     "express": "^4.13.4",
-    "pm2": "^1.0.2",
+    "pm2": "^1.1.1",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
     "browser-sync": "^2.9.4",
     "browser-sync-spa": "^1.0.3",
-    "del": "^2.0.2",
+    "del": "^2.2.0",
     "event-stream": "^3.3.1",
     "gulp": "^3.9.1",
     "gulp-angular-filesort": "^1.1.1",
@@ -49,7 +49,7 @@
     "gulp-minify-html": "^1.0.4",
     "gulp-ng-annotate": "^1.1.0",
     "gulp-ng-config": "^1.2.1",
-    "gulp-nodemon": "^2.0.4",
+    "gulp-nodemon": "^2.0.6",
     "gulp-plumber": "^1.0.1",
     "gulp-protractor": "^1.0.0",
     "gulp-replace": "^0.5.4",
