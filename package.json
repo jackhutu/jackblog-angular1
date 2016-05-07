@@ -1,9 +1,11 @@
 {
   "name": "jackblog-angular1",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "jackblog angular1.x版",
   "scripts": {
-    "start": "gulp serve",
+    "start": "gulp serve:dist",
+    "dev": "gulp serve",
+    "build": "gulp build",
     "test": "gulp test:karma",
     "test-e2e": "gulp test:e2e",
     "pm2-start": "pm2 start process.json",
