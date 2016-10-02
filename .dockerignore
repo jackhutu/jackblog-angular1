@@ -3,5 +3,10 @@
 node_modules
 test
 test_coverage
-webpack
+test_e2e
+test_karma
+bower_components
 src
+.tmp
+.sass-cache
+gulp
