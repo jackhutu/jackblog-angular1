@@ -7,7 +7,7 @@
     }
   },
   "production": {
-    "ServerUrl": "http://api.jackhu.top",
+    "ServerUrl": "https://api.jackhu.top",
     "IsDebug":false,
     "CookieConfig":{
       "domain":".jackhu.top"

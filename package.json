@@ -1,6 +1,6 @@
 {
   "name": "jackblog-angular1",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "jackblog angular1.x版",
   "scripts": {
     "start": "gulp serve:dist",
@@ -8,8 +8,7 @@
     "build": "gulp build",
     "test": "gulp test:karma",
     "test-e2e": "gulp test:e2e",
-    "pm2-start": "pm2 start process.json",
-    "pm2-restart": "pm2 restart process.json"
+    "pm2-start": "pm2 start --no-daemon process.json"
   },
   "repository": {
     "type": "git",
@@ -26,19 +25,18 @@
   },
   "homepage": "https://github.com/jackhutu/jackblog-angular1#readme",
   "dependencies": {
-    "express": "^4.13.4",
-    "pm2": "^1.1.1",
+    "express": "^4.14.0",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
     "browser-sync": "^2.9.4",
     "browser-sync-spa": "^1.0.3",
-    "del": "^2.2.0",
-    "event-stream": "^3.3.1",
+    "del": "^2.2.2",
+    "event-stream": "^3.3.4",
     "gulp": "^3.9.1",
     "gulp-angular-filesort": "^1.1.1",
     "gulp-angular-templatecache": "^1.7.0",
-    "gulp-autoprefixer": "^3.0.1",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-compass": "^2.1.0",
     "gulp-csso": "^1.0.0",
     "gulp-env": "^0.2.0",
@@ -48,7 +46,7 @@
     "gulp-inject": "^2.2.0",
     "gulp-jshint": "^1.11.2",
     "gulp-load-plugins": "^0.10.0",
-    "gulp-minify-html": "^1.0.4",
+    "gulp-minify-html": "^1.0.6",
     "gulp-ng-annotate": "^1.1.0",
     "gulp-ng-config": "^1.2.1",
     "gulp-nodemon": "^2.0.6",
@@ -69,7 +67,7 @@
     "jasmine-core": "^2.3.4",
     "jshint-stylish": "^2.0.1",
     "karma": "^0.13.10",
-    "karma-angular-filesort": "^1.0.0",
+    "karma-angular-filesort": "^1.0.1",
     "karma-coverage": "^0.5.2",
     "karma-jasmine": "^0.3.6",
     "karma-ng-html2js-preprocessor": "^0.1.2",
